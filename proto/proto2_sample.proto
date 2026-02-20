@@ -1,0 +1,23 @@
+syntax = "proto2";
+
+package compat;
+
+message Proto2Child {
+  optional int32 value = 1;
+}
+
+message Proto2Sample {
+  required int32 req_int = 1;
+  required Proto2Child req_msg = 2;
+
+  optional int32 opt_int = 3;
+  optional int32 opt_with_default = 4 [default = 7];
+  optional Proto2Child opt_msg = 5;
+
+  repeated int32 rep_int = 6;
+
+  oneof choice {
+    int32 choice_int = 7;
+    Proto2Child choice_msg = 8;
+  }
+}

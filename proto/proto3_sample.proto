@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package compat;
+
+message Proto3Child {
+  optional int32 value = 1;
+}
+
+message Proto3Sample {
+  int32 plain_int = 1;
+  Proto3Child plain_msg = 2;
+
+  optional int32 opt_int = 3;
+  optional Proto3Child opt_msg = 5;
+
+  repeated int32 rep_int = 6;
+
+  oneof choice {
+    int32 choice_int = 7;
+    Proto3Child choice_msg = 8;
+  }
+}

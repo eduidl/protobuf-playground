@@ -1,0 +1,7 @@
+# Python
+__pycache__/
+*.pyc
+
+# Rust
+rust/target/
+Cargo.lock
